@@ -1,5 +1,5 @@
 // CartItem: Should render <li> element
-import React, { PureComponent } from 'react' //of PureComponent?
+import React, { PureComponent } from 'react'
 import PropTypes from 'prop-types'
 
 
@@ -9,7 +9,7 @@ export const itemShape = PropTypes.shape({
     price: PropTypes.number.isRequired
 })
 
-export default class CartItem extends PureComponent { //of PureComponent?
+export default class CartItem extends PureComponent { 
     static propTypes = itemShape.isRequired
 
     render() {

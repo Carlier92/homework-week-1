@@ -4,10 +4,12 @@ import products from './components/products'
 import CartItem from './components/CardItem'
 import CheckoutButton from './components/CheckoutButton.js'
 
-
-
-
 class App extends Component {
+
+    incrementQuantity(productId) {
+
+    }
+
     render() {
         return (
             <Fragment>
