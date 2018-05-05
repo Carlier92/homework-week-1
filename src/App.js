@@ -5,6 +5,40 @@ import CartItem from './components/CardItem'
 import CheckoutButton from './components/CheckoutButton.js'
 
 class App extends Component {
+    constructor(props) {
+        super(props)
+        this.state = {
+            products: []
+        }
+    }
+
+// updateQuantity = (productId, updates) => {
+//     this.setState({
+//       quantity: this.state.players.map((quantity) => {
+//         if (player.id !== playerId) return player
+//         return { ...player, ...updates }
+//       })
+//     })
+//   }
+// }
+
+IncrementItem(id) {
+     this.setState(prevState => ({
+         items: prevState.items.filter(item =>  {
+             item.quantity = item.quantity + 1;
+                 return true;
+             })
+         }));
+         }
+
+
+
+
+
+
+
+
+
 
     incrementQuantity(productId) {
         console.log(productId)
