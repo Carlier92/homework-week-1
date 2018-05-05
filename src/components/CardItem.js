@@ -9,21 +9,25 @@ export const itemShape = PropTypes.shape({
     price: PropTypes.number.isRequired
 })
 
-export default class CartItem extends PureComponent { 
+export default class CartItem extends PureComponent {
     static propTypes = itemShape.isRequired
+
 
     render() {
 
         console.log(this.props);
-        const { products } = this.props
-
+        const { products, onPlusClick} = this.props
+         console.log(this.props.onPlusClick(12));
         return (
             <ul>
                 {products.map( (product, index) => {
-                    return (<li key={index} className="CartItem">
-                        <p className="name">{product.name}</p>
-                        <p className="price">{product.price}</p>
-                    </li>)
+                    return (
+                        <li key={index} className="CartItem">
+                            <p className="name">{product.name}</p>
+                            <p className="price">{product.price}</p>
+                            <a type="button" onClick={() => onPlusClick(product.id)}>+</a>
+                        </li>
+                    )
                 })}
             </ul>
         )
