@@ -1,4 +1,6 @@
-class CheckoutButton extends Component {
+import React, { PureComponent } from 'react'
+
+class CheckoutButton extends PureComponent {
     render() {
         return (
             <button className="CheckoutButton" />
