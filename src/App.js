@@ -3,7 +3,7 @@ import './App.css'
 import products from './components/products'
 import CartItem from './components/CardItem'
 import CheckoutButton from './components/CheckoutButton'
-import MyComponent from './components/clock'
+import Clock from 'react-live-clock'
 
 class App extends Component {
     constructor(props) {
@@ -24,9 +24,9 @@ incrementQuantity = () => {
         return (
             <Fragment>
                 <div className="App">
-                    <h1 className="App-title">Groceries App</h1>
-                </div>
+                <Clock format={'HH:mm:ss'} ticking={true} timezone={'US/Pacific'} />                    <h1 className="App-title">Groceries App</h1>
                 <CartItem products={products} onPlusClick={this.incrementQuantity}/>
+                </div>
             </Fragment>
         )
     }
