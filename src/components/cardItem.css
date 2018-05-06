@@ -1,0 +1,13 @@
+li {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+p {
+    margin-left: 10px;
+}
+
+button {
+    margin-left: 10px;
+}
