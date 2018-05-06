@@ -4,6 +4,10 @@ li {
     align-items: center;
 }
 
-.name {
+p {
+    margin-left: 10px;
+}
 
+button {
+    margin-left: 10px;
 }

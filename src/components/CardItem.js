@@ -16,7 +16,7 @@ export default class CartItem extends PureComponent {
 
     render() {
 
-        // console.log(this.props);
+        // console.log(this.props)
         const { products, onPlusClick } = this.props
          // console.log(this.props.onPlusClick());
         return (
@@ -24,9 +24,9 @@ export default class CartItem extends PureComponent {
                 {products.map( (product, index) => {
                     return (
                         <li key={index} className="cartItem">
-                            <p className="name">{product.name} price: </p>
-                            <p className="price">{product.price}</p>
-                            <p className="quantity">{product.quantity} quantity : </p>
+                            <p className="name">{product.name}  price:</p>
+                            <p className="price">{product.price}  quantity: </p>
+                            <p className="quantity">{product.quantity}</p>
                             <button onClick={() => onPlusClick(product.id)}>+</button>
                         </li>
                     )
