@@ -1,6 +1,7 @@
 // CartItem: Should render <li> element
 import React, { PureComponent } from 'react'
 import PropTypes from 'prop-types'
+import './cardItem.css'
 
 
 export const itemShape = PropTypes.shape({
@@ -22,10 +23,10 @@ export default class CartItem extends PureComponent {
             <ul>
                 {products.map( (product, index) => {
                     return (
-                        <li key={index} className="CartItem">
-                            <p className="name">{product.name}</p>
+                        <li key={index} className="cartItem">
+                            <p className="name">{product.name} price: </p>
                             <p className="price">{product.price}</p>
-                            <p className="quantity">{product.quantity}</p>
+                            <p className="quantity">{product.quantity} quantity : </p>
                             <button onClick={() => onPlusClick(product.id)}>+</button>
                         </li>
                     )

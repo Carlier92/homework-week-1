@@ -2,47 +2,23 @@ import React, { Component, Fragment } from 'react'
 import './App.css'
 import products from './components/products'
 import CartItem from './components/CardItem'
-import CheckoutButton from './components/CheckoutButton.js'
+import CheckoutButton from './components/CheckoutButton'
+import MyComponent from './components/clock'
 
 class App extends Component {
     constructor(props) {
         super(props)
         this.state = {
-            products: []
+            products: [],
+            quantity: 0
         }
     }
 
-// updateQuantity = (productId, updates) => {
-//     this.setState({
-//       quantity: this.state.players.map((quantity) => {
-//         if (player.id !== playerId) return player
-//         return { ...player, ...updates }
-//       })
-//     })
-//   }
-// }
-
-IncrementItem(id) {
-     this.setState(prevState => ({
-         items: prevState.items.filter(item =>  {
-             item.quantity = item.quantity + 1;
-                 return true;
-             })
-         }));
-         }
-
-
-
-
-
-
-
-
-
-
-    incrementQuantity(productId) {
-        console.log(productId)
-    }
+incrementQuantity = () => {
+    this.setState({ quantity: this.state.quantity + 1 })
+    console.log(this.state)
+} // het maakt niet uit elke product er gedrukt word, telt alles bij elkaar op.
+// nog iets pushen in products? .lenght daarop doen?
 
     render() {
         return (
