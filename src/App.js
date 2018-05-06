@@ -10,6 +10,7 @@ class App extends Component {
         super(props)
         this.state = {
             productList: [],
+            totalPrice: 0
         }
     }
 
@@ -23,18 +24,28 @@ class App extends Component {
         this.setState({productList: updatedProducts})
     }
 
+    checkout = (price) => {
+        let total = 0
+        this.state.productList.map(product => {
+            return total += product.price * product.quantity
+        })
+        this.setState({totalPrice: total})
+    }
+
+
     componentDidMount() {
-        // console.log('hoi');
         this.setState({productList: products})
     }
 
     render() {
-        // console.log(this.state.productList);
         return (
             <Fragment>
                 <div className="App">
-                <Clock format={'HH:mm:ss'} ticking={true} timezone={'US/Pacific'} />                    <h1 className="App-title">Groceries App</h1>
-                <CartItem test="blabla" products={this.state.productList} onPlusClick={this.incrementQuantity}/>
+                    <Clock format={'HH:mm:ss'} ticking={true} timezone={'US/Pacific'} />
+                    <h1 className="App-title">Groceries App</h1>
+                    <CartItem products={this.state.productList} onPlusClick={this.incrementQuantity}/>
+                    <p>Total Price: {this.state.totalPrice.toFixed(2)}</p>
+                    <CheckoutButton products={this.state.productList} onCheckout={this.checkout}/>
                 </div>
             </Fragment>
         )

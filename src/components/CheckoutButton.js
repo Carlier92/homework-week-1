@@ -1,12 +1,12 @@
 import React, { PureComponent } from 'react'
 
-class CheckoutButton extends PureComponent {
+export default class CheckoutButton extends PureComponent {
     render() {
+        const { onCheckout, products } = this.props
         return (
-            <button className="CheckoutButton" />
+            <div>
+            <button className="CheckoutButton" onClick={() => onCheckout(products.price)}>checkout</button>
+            </div>
         )
     }
 }
-
-export default CheckoutButton
-// CheckoutButton: Should render a <button> element
